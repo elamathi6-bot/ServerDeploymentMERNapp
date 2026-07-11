@@ -52,6 +52,13 @@ app.use(
 // Required to read data sent in POST / PUT requests
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("✅ Server is running successfully!");
+});
+
+app.use("/api/auth", authRoutes);
+app.use("/api/books", bookRoutes);
+
 // --------------------------------------------------
 // ROUTE REGISTRATION
 // --------------------------------------------------
